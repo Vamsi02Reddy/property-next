@@ -1,4 +1,6 @@
 import PropertyAddForm from "../../../app/components/PropertyAddForm";
+export const dynamic = "force-dynamic";
+
 const PropertiesAdd = () => {
   return (
     <section className="bg-blue-50">
