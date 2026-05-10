@@ -3,7 +3,8 @@ import Property from "../../../models/Property";
 import Link from "next/link";
 import PropertySearchForm from "../../components/PropertySearchForm";
 import PropertyCard from "../../components/PropertyCard";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleLeft,FaExclamationCircle } from "react-icons/fa";
+
 export const dynamic = "force-dynamic";
 
 const SearchResultsPage = async ({ searchParams }) => {
@@ -29,7 +30,34 @@ const SearchResultsPage = async ({ searchParams }) => {
     JSON.stringify(await Property.find(query).lean()),
   );
   if (propertiesQueryResults.length === 0) {
-    return <h1>No properties found</h1>;
+    return (
+      <section className="bg-blue-50 min-h-screen grow">
+        <div className="container m-auto max-w-2xl py-10">
+          <div className="bg-white px-6 py-24 mb-4 shadow-md rounded-md m-4 md:m-0">
+            <div className="flex justify-center">
+              <FaExclamationCircle className="text-8xl text-yellow-400" />
+            </div>
+
+            <div className="text-center">
+              <h1 className="text-3xl font-bold mt-4 mb-2">
+                Something went Wrong 😥
+              </h1>
+
+              <p className="text-gray-500 text-xl mb-10">
+                No Properties Found!
+              </p>
+
+              <Link
+                href="/"
+                className="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded"
+              >
+                Go Home
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
   }
   return (
     <>
