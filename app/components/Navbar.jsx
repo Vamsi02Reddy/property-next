@@ -184,7 +184,7 @@ const Navbar = () => {
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
                       tabIndex="-1"
-                      onClick={()=>setIsProfileMenuOpen(false)}
+                      onClick={() => setIsProfileMenuOpen(false)}
                     >
                       Your Profile
                     </Link>
@@ -193,7 +193,7 @@ const Navbar = () => {
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
                       tabIndex="-1"
-                      onClick={()=>setIsProfileMenuOpen(false)}
+                      onClick={() => setIsProfileMenuOpen(false)}
                     >
                       Saved Properties
                     </Link>
@@ -247,8 +247,8 @@ const Navbar = () => {
               </Link>
             )}
             {!session && (
-              <button className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-4">
-                <i className="fa-brands fa-google mr-2"></i>
+              <button onClick={() => signIn("google")} className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2 my-4">
+                <FaGoogle className="text-white mr-2" />
                 <span>Login or Register</span>
               </button>
             )}
