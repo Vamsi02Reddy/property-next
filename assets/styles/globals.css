@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+body {
+  font-family: var(--font-inter);
+}
+
+h1, h2 {
+  font-family: var(--font-poppins);
+}
