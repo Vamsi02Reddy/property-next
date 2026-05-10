@@ -28,8 +28,9 @@ const SearchResultsPage = async ({ searchParams }) => {
   const propertiesQueryResults = JSON.parse(
     JSON.stringify(await Property.find(query).lean()),
   );
-  if (propertiesQueryResults.length === 0)
-    throw new Error("No result found! Pls check other properties");
+  if (propertiesQueryResults.length === 0) {
+    return <h1>No properties found</h1>;
+  }
   return (
     <>
       <section className="bg-blue-700 py-5">
@@ -51,8 +52,8 @@ const SearchResultsPage = async ({ searchParams }) => {
               <p>No Search Results Found</p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {propertiesQueryResults.map((property)=>(
-                    <PropertyCard key={property._id} property={property} />
+                {propertiesQueryResults.map((property) => (
+                  <PropertyCard key={property._id} property={property} />
                 ))}
               </div>
             )}
