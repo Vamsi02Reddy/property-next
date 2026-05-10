@@ -2,6 +2,7 @@ import PropertyCard from "../components/PropertyCard";
 import connectDB from "../../config/database";
 import Property from "../../models/Property";
 import Pagination from "../components/Pagination";
+export const dynamic = "force-dynamic";
 
 const PropertiesPage = async (props) => {
   const searchParams = await props.searchParams;

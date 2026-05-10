@@ -4,6 +4,7 @@ import Property from "../../models/Property";
 import { getSessionUser } from "../../utils/getSessionUser";
 import profileDefault from "../images/profile.png";
 import ProfileProperties from "../components/ProfileProperties";
+export const dynamic = "force-dynamic";
 
 const ProfilePage = async () => {
   await connectDB();

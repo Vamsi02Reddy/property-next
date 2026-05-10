@@ -8,6 +8,7 @@ import PropertyImages from "../../components/PropertyImages";
 import BookmarkButton from "../../components/BookmarkButton";
 import ShareButton from "../../components/ShareButton";
 import PropertyContactForm from "../../components/PropertyContantForm";
+export const dynamic = "force-dynamic";
 
 const PropertyItem = async ({ params }) => {
   await connectDB();

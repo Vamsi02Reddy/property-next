@@ -4,6 +4,7 @@ import Link from "next/link";
 import PropertySearchForm from "../../components/PropertySearchForm";
 import PropertyCard from "../../components/PropertyCard";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
+export const dynamic = "force-dynamic";
 
 const SearchResultsPage = async ({ searchParams }) => {
   await connectDB();

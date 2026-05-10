@@ -1,9 +1,8 @@
 import connectDB from "../../config/database";
 import Message from "../../models/Message";
-import Property from "../../models/Property";
 import { getSessionUser } from "../../utils/getSessionUser";
 import MessageCard from "../components/MessageCard";
-
+export const dynamic = "force-dynamic";
 const MessagesPage = async () => {
   await connectDB();
   const sessionUser = await getSessionUser();
